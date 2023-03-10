@@ -29,6 +29,11 @@ switch ($url) {
     case '/estagio/ponto/save':
             PontoController::save();
             break;
+    
+
+    case '/gerar/':
+        EstagioController::gerar();
+        break;
 
     default:
         echo "Error 404";

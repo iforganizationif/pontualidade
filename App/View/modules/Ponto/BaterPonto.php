@@ -9,6 +9,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
 </head>
+<?php
+date_default_timezone_set("America/Sao_Paulo");
+$date = date('d/m/Y à\s H:i:s');
+?>
 
 <body>
     <form method="post" action="/estagio/ponto/save">
@@ -23,8 +27,9 @@
             <input class="form-check-input" type="checkbox" role="switch" value="saida" name="tipo" id="tipo">
         </div>
         <div class="form-control">
-            <label for="horario" class="label-control">Horário</label>
-            <input type="datetime-local" class="form-control" name="data_hora" id="data_hora">
+            <label for="horario" class="label-control" hidden>Horário</label>
+            <input type="hidden" class="form-control" name="data_hora" id="data_hora" value="<?= date('d-m-Y H:i:s'); ?>"
+                disabled>
         </div>
         <br>
         <div class="form-group">

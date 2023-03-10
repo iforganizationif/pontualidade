@@ -37,6 +37,9 @@ class EstagioController
     public function delete(){
 
     }
+    public static function gerar(){
+        include './App/View/modules/Pessoa/GerarExcel.php';
+    }
 }
 
 ?>
